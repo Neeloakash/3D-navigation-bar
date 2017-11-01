@@ -1,0 +1,61 @@
+ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+.nav {
+    position: relative;
+    left: 100px;
+    top: 100px;
+    width: 500px;
+    height: 50px;
+}
+.nav>li {
+    perspective: 200px;
+}
+.nav li {
+    float: left;
+    width: 100px;
+    height: 50px;
+    line-height: 50px;
+}
+.nav .trd-box {
+    transform-style: preserve-3d;
+    transform: translateZ(-25px);
+    position: absolute;
+    width: 100px;
+    height: 50px;
+    transition: transform 0.4s;
+    cursor: pointer;
+}
+.nav .trd-box:hover {
+    transform: translateZ(-25px) rotateX(90deg);
+}
+.nav .trd-box>span {
+    position: absolute;
+    width: 100px;
+    height: 50px;
+    left: 0;
+    top: 0;
+    line-height: 50px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    background-image: linear-gradient(to top right, red, yellow, blue);
+}
+.nav .trd-box .front {
+    transform: translateZ(25px);
+}
+.nav .trd-box .subface {
+    transform: rotateX(-90deg) translateZ(25px);
+}
+.nav li .sub-nav {
+    position: absolute;
+    top: 50px;
+    transform: rotateX(-82deg);
+    transform-origin: 0 0;
+    transition: transform 0.5s;
+}
+.sp:hover ul.sub-nav{
+    transform: rotateX(-90deg) translateY(25px);
+}
